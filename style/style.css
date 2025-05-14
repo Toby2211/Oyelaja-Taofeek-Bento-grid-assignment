@@ -155,8 +155,6 @@ body {
     background-color: var(--Purple-500);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* padding-right: -2rem; */
-    /* padding-bottom: -6rem; */
 }
 
 .parent-grid .card:nth-child(5) .text {
@@ -167,7 +165,6 @@ body {
     margin-top: 9rem;
 }
 
-/* .parent-grid .card:nth-child(5) .text, */
 .parent-grid .card:nth-child(5) img {
     margin-top: 5rem;
 }
