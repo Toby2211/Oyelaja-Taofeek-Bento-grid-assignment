@@ -16,6 +16,18 @@
 
     --White: hsl(0, 0%, 100%);
     --Black: hsl(0, 0%, 7%);
+
+    /*
+        Rel. btwn. nth-child and grid-area placement:
+        nth-child(1) = item2
+        nth-child(2) = item4
+        nth-child(3) = item5
+        nth-child(4) = item3
+        nth-child(5) = item8
+        nth-child(6) = item7
+        nth-child(7) = item1
+        nth-child(8) = item6
+    */
 }
 
 body {
@@ -226,9 +238,158 @@ body {
 }
 
 /* tablet */
-@media (max-width: 1024px) {
-    .card:nth-child(2) {
-        background-color: lightgray;
+@media (max-width: 769px) {
+    .parent-grid {
+        display: grid;
+        grid-template-columns: repeat (3, 1fr);
+        grid-template-areas:
+            "item2 item2 item3"
+            "item1 item4 item3"
+            "item8 item5 item7"
+            "item8 item6 item6";
+        gap: 1.5rem;
+        width: 130%
+            /*used this to make it fit the page, alternative ways would be appreciated*/
+    }
+
+    .parent-grid .card {
+        padding: auto;
+        border-radius: 0.7rem;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+
+    .parent-grid .card:nth-child(1) .top {
+        font-size: 50px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .parent-grid .card:nth-child(1) .bottom {
+        font-size: 30px;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .parent-grid .card:nth-child(2) .text {
+        font-size: 2rem;
+    }
+
+    .parent-grid .card:nth-child(2) .img {
+        margin: 1rem 0 1rem 0;
+        width: 280px;
+        height: 75px;
+        overflow: hidden;
+    }
+
+    .parent-grid .card:nth-child(3) .text {
+        font-size: 40px;
+        margin: 2rem auto 1.5rem 0;
+    }
+
+    .parent-grid .card:nth-child(3) .img {
+        width: 290px;
+        height: 80px;
+        overflow: hidden;
+        margin-right: 3rem;
+    }
+
+    .parent-grid .card:nth-child(3) img {
+        width: 60%;
+        height: auto;
+        margin-right: 1rem;
+    }
+
+    .parent-grid .card:nth-child(4) .top {
+        font-size: 34px;
+        margin: 2rem 1rem 2rem 0;
+        text-align: center;
+    }
+
+    .parent-grid .card:nth-child(4) .bottom {
+        font-size: 29px;
+        text-align: left;
+        margin: 2rem 1rem 0 0;
+    }
+
+    .parent-grid .card:nth-child(4) .img {
+        width: 300px;
+        height: auto;
+        margin-right: 1rem;
+    }
+
+    .parent-grid .card:nth-child(4) img {
+        width: auto;
+        height: 100%;
+    }
+
+    .parent-grid .card:nth-child(5) {
+        grid-area: item8;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .parent-grid .card:nth-child(5) .text {
+        font-size: 49px;
+        margin: 3rem 1rem auto 1rem;
+    }
+
+    .parent-grid .card:nth-child(5) img {
+        width: auto;
+        height: auto;
+        margin: 5rem 1rem 0 0;
+    }
+
+    .parent-grid .card:nth-child(6) {
+        grid-area: item7;
+    }
+
+    .parent-grid .card:nth-child(6) .text {
+        font-size: 2rem;
+        display: grid;
+        margin: 3rem 0 0 0;
+        font-size: 34px;
+    }
+
+    .parent-grid .card:nth-child(6) .text .bigger {
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    .parent-grid .card:nth-child(6) .img {
+        margin: 0.5rem 1rem 0 0;
+    }
+
+    .parent-grid .card:nth-child(6) img {
+        width: 200px;
+        height: auto;
+    }
+
+    .parent-grid .card:nth-child(7) {
+        grid-area: item1;
+    }
+
+    .parent-grid .card:nth-child(7) .text {
+        margin-top: 2rem;
+        font-size: 35px;
+    }
+
+    .parent-grid .card:nth-child(8) {
+        grid-area: item6;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*fits a lot better here*/
+    }
+
+    .parent-grid .card:nth-child(8) .text {
+        font-size: 60px;
+        margin-top: 1.5rem;
+    }
+
+    .parent-grid .card:nth-child(8) img {
+        width: auto;
+        height: 250px;
+        margin: 1rem 0.5rem 0 1rem;
     }
 }
 
@@ -257,5 +418,111 @@ body {
         border-radius: 0.7rem;
         overflow: hidden;
         word-wrap: break-word;
+    }
+
+    .parent-grid .card:nth-child(1) .top {
+        font-size: 50px;
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .parent-grid .card:nth-child(1) .bottom {
+        font-size: 30px;
+        padding-bottom: 3rem;
+    }
+
+    .parent-grid .card:nth-child(2) .text {
+        font-size: 2rem;
+    }
+
+    .parent-grid .card:nth-child(2) .img {
+        margin-bottom: 1rem;
+    }
+
+    .parent-grid .card:nth-child(3) .text {
+        font-size: 40px;
+        margin: 0 0 1rem 0;
+        /*for some reason margin-bottom wont work*/
+    }
+
+    .parent-grid .card:nth-child(4) .top {
+        font-size: 30px;
+    }
+
+    .parent-grid .card:nth-child(4) .bottom {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .parent-grid .card:nth-child(4) .img {
+        width: auto;
+        height: auto;
+        margin-right: 2rem;
+    }
+
+    .parent-grid .card:nth-child(5) {
+        grid-area: item8;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .parent-grid .card:nth-child(5) .text {
+        font-size: 50px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    .parent-grid .card:nth-child(5) img {
+        width: auto;
+        height: auto;
+        margin: 3rem 1rem 0 0;
+    }
+
+    .parent-grid .card:nth-child(6) {
+        grid-area: item7;
+    }
+
+    .parent-grid .card:nth-child(6) .text {
+        font-size: 2rem;
+        display: grid;
+        margin: 1rem 0 0 0;
+    }
+
+    .parent-grid .card:nth-child(6) .text .bigger {
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    .parent-grid .card:nth-child(6) .img {
+        margin: 1rem 1rem 3rem 0;
+    }
+
+    .parent-grid .card:nth-child(6) img {
+        width: 550px;
+    }
+
+    .parent-grid .card:nth-child(7) {
+        grid-area: item1;
+        padding-bottom: 3rem;
+    }
+
+    .parent-grid .card:nth-child(7) .text {
+        margin-top: 1rem;
+        font-size: 40px;
+    }
+
+    .parent-grid .card:nth-child(8) {
+        grid-area: item6;
+    }
+
+    .parent-grid .card:nth-child(8) .text {
+        font-size: 40px;
+        margin-top: 2rem;
+    }
+
+    .parent-grid .card:nth-child(8) img {
+        width: 300px;
+        margin: 1rem 0 0 1rem;
     }
 }
